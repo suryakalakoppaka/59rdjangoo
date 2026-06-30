@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student form</h1>
+    <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+
+    </form>
+    </body>
+    </html>
+    <hr>
+    <table border="2">
+        <tr>
+        <th>std_id</th>
+        <th>std_name</th>
+         <th>std_age</th>
+         </tr>
+         {% for x in data %}
+         <tr>
+            <td>{{x.std_id}}</td>
+            <td>{{x.std_name}}</td>
+            <td>{{x.std_age}}</td>
+            {% endfor %}
+         </tr>
+    </table>
+</body>
+</html>
